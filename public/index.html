@@ -15,7 +15,97 @@
   <div class="background-glow glow-two"></div>
 
 
-  <main class="app-shell">
+  <!-- ==================================================
+       LOGIN SCREEN
+  =================================================== -->
+
+  <main
+    id="loginScreen"
+    class="login-shell"
+  >
+
+    <section class="login-card">
+
+      <div class="brand-icon">
+        ✦
+      </div>
+
+      <h1>
+        CodEase
+      </h1>
+
+      <p class="login-description">
+        Sign in to continue.
+      </p>
+
+
+      <form id="loginForm">
+
+        <div class="login-field">
+
+          <label for="username">
+            Username
+          </label>
+
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            required
+          >
+
+        </div>
+
+
+        <div class="login-field">
+
+          <label for="password">
+            Password
+          </label>
+
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+
+        </div>
+
+
+        <button
+          id="loginButton"
+          class="primary-button login-button"
+          type="submit"
+        >
+          Sign In
+        </button>
+
+
+        <div
+          id="loginStatus"
+          class="status-message"
+        ></div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==================================================
+       CODEASE APPLICATION
+  =================================================== -->
+
+  <main
+    id="appShell"
+    class="app-shell"
+    hidden
+  >
 
     <header class="topbar">
 
@@ -27,19 +117,35 @@
 
         <div>
           <h1>CodEase</h1>
-          <p>Welcome to CodEase. Please be specific about the Hub, section, subsection, and change you want.</p>
+
+          <p>
+            Welcome to CodEase. Please be specific about the Hub, section, subsection, and change you want.
+          </p>
         </div>
 
       </div>
 
 
-      <div class="connection-status">
+      <div class="topbar-actions">
 
-        <span class="status-dot"></span>
+        <div class="connection-status">
 
-        <span>
-          Connected
-        </span>
+          <span class="status-dot"></span>
+
+          <span>
+            Connected
+          </span>
+
+        </div>
+
+
+        <button
+          id="logoutButton"
+          class="logout-button"
+          type="button"
+        >
+          Log Out
+        </button>
 
       </div>
 
@@ -56,15 +162,23 @@
       <section class="section-block">
 
         <div class="section-heading">
-          <span class="step-number">1</span>
+
+          <span class="step-number">
+            1
+          </span>
 
           <div>
-            <h2>Select a Hub</h2>
+
+            <h2>
+              Select a Hub
+            </h2>
 
             <p>
               Choose which resource Hub you want CodEase to update.
             </p>
+
           </div>
+
         </div>
 
 
@@ -81,8 +195,15 @@
             </div>
 
             <div class="hub-card-content">
-              <strong>LRC Hub</strong>
-              <span>LRC-Main-Hub</span>
+
+              <strong>
+                LRC Hub
+              </strong>
+
+              <span>
+                LRC-Main-Hub
+              </span>
+
             </div>
 
             <div class="hub-check">
@@ -103,8 +224,15 @@
             </div>
 
             <div class="hub-card-content">
-              <strong>ARC Library Hub</strong>
-              <span>ARC-Library-Hub</span>
+
+              <strong>
+                ARC Library Hub
+              </strong>
+
+              <span>
+                ARC-Library-Hub
+              </span>
+
             </div>
 
             <div class="hub-check">
@@ -127,14 +255,20 @@
 
         <div class="section-heading">
 
-          <span class="step-number">2</span>
+          <span class="step-number">
+            2
+          </span>
 
           <div>
-            <h2>Ask CodEase</h2>
+
+            <h2>
+              Ask CodEase
+            </h2>
 
             <p>
               Describe the change in plain English.
             </p>
+
           </div>
 
         </div>
@@ -158,7 +292,10 @@
               id="previewButton"
               class="primary-button"
             >
-              <span>✦</span>
+              <span>
+                ✦
+              </span>
+
               Generate Plan
             </button>
 
@@ -193,11 +330,15 @@
           </span>
 
           <div>
-            <h2>Review Proposed Change</h2>
+
+            <h2>
+              Review Proposed Change
+            </h2>
 
             <p>
               CodEase has translated your request into an update plan.
             </p>
+
           </div>
 
         </div>
@@ -212,6 +353,7 @@
             </div>
 
             <div>
+
               <span class="plan-label">
                 Proposed Change
               </span>
@@ -219,6 +361,7 @@
               <h3 id="planSummary">
                 Proposed update
               </h3>
+
             </div>
 
           </div>
