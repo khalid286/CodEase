@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CodEase</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+
+  <main class="app-shell">
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          ✦
+        </div>
+
+        <div>
+          <h1>CodEase</h1>
+          <p>Welcome to CodEase. Please be specific about the Hub, section, subsection, and change you want.</p>
+        </div>
+
+      </div>
+
+
+      <div class="connection-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          Connected
+        </span>
+
+      </div>
+
+    </header>
+
+
+    <section class="workspace">
+
+
+      <!-- ==================================================
+           HUB SELECTION
+      =================================================== -->
+
+      <section class="section-block">
+
+        <div class="section-heading">
+          <span class="step-number">1</span>
+
+          <div>
+            <h2>Select a Hub</h2>
+
+            <p>
+              Choose which resource Hub you want CodEase to update.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="hub-grid">
+
+          <button
+            type="button"
+            class="hub-card selected"
+            data-hub="lrc"
+          >
+
+            <div class="hub-card-icon">
+              📚
+            </div>
+
+            <div class="hub-card-content">
+              <strong>LRC Hub</strong>
+              <span>LRC-Main-Hub</span>
+            </div>
+
+            <div class="hub-check">
+              ✓
+            </div>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="hub-card"
+            data-hub="library"
+          >
+
+            <div class="hub-card-icon">
+              🏛️
+            </div>
+
+            <div class="hub-card-content">
+              <strong>ARC Library Hub</strong>
+              <span>ARC-Library-Hub</span>
+            </div>
+
+            <div class="hub-check">
+              ✓
+            </div>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           REQUEST
+      =================================================== -->
+
+      <section class="section-block">
+
+        <div class="section-heading">
+
+          <span class="step-number">2</span>
+
+          <div>
+            <h2>Ask CodEase</h2>
+
+            <p>
+              Describe the change in plain English.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="prompt-card">
+
+          <textarea
+            id="request"
+            placeholder="Example: Add the Fall worksheet under Beacon..."
+          ></textarea>
+
+
+          <div class="prompt-footer">
+
+            <div class="prompt-hint">
+              ✦ CodEase will preview the change before anything is applied.
+            </div>
+
+            <button
+              id="previewButton"
+              class="primary-button"
+            >
+              <span>✦</span>
+              Generate Plan
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="status"
+          class="status-message"
+        ></div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           PLAN PREVIEW
+      =================================================== -->
+
+      <section
+        id="preview"
+        class="section-block preview-section"
+        hidden
+      >
+
+        <div class="section-heading">
+
+          <span class="step-number">
+            3
+          </span>
+
+          <div>
+            <h2>Review Proposed Change</h2>
+
+            <p>
+              CodEase has translated your request into an update plan.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="plan-card">
+
+          <div class="plan-header">
+
+            <div class="plan-icon">
+              ✦
+            </div>
+
+            <div>
+              <span class="plan-label">
+                Proposed Change
+              </span>
+
+              <h3 id="planSummary">
+                Proposed update
+              </h3>
+            </div>
+
+          </div>
+
+
+          <div class="plan-divider"></div>
+
+
+          <div class="plan-detail">
+
+            <span class="detail-label">
+              Reason
+            </span>
+
+            <p id="planReason"></p>
+
+          </div>
+
+
+          <div class="plan-detail">
+
+            <span class="detail-label">
+              Changes
+            </span>
+
+            <div
+              id="friendlyOperations"
+              class="friendly-operations"
+            ></div>
+
+          </div>
+
+
+          <details class="technical-details">
+
+            <summary>
+              Technical details
+            </summary>
+
+            <pre id="planOperations"></pre>
+
+          </details>
+
+
+          <div class="plan-actions">
+
+            <button
+              id="cancelButton"
+              class="secondary-button"
+              type="button"
+            >
+              Cancel
+            </button>
+
+            <button
+              id="applyButton"
+              class="apply-button"
+              type="button"
+            >
+              ✓ Apply Change
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           SUCCESS
+      =================================================== -->
+
+      <section
+        id="successPanel"
+        class="success-panel"
+        hidden
+      >
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <h2>
+            Update Complete
+          </h2>
+
+          <p id="successMessage">
+            CodEase successfully updated the Hub.
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </section>
+
+
+    <footer>
+      CodEase · American River College
+    </footer>
+
+  </main>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
